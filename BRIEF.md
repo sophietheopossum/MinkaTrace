@@ -96,7 +96,7 @@ precisely because focus is logged at `debug!`.
 
 Connect, send, read one line, close. The server drops a half-closed connection, so a bare
 `socat` often returns nothing. There is no `windows.list`; methods are registered in
-`ShojiWM/packages/config/src/index.tsx` under `WORKSPACE_IPC.handle`.
+`ShojiWM/packages/config/src/minka/workspace-ipc.ts` under `server.handle`.
 
 ## Configuration
 
