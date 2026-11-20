@@ -34,8 +34,14 @@ let the reader draw the conclusion. When a source is empty, say whether it is *e
 
 Each entry below is a verified property of this machine, not a guess. Encode the traps.
 
-### 1. Compositor session logs — `~/shoji_wm/logs`
+### 1. Compositor session logs — `~/.local/state/shoji_wm/logs`
 
+- **Two directories: search both.** Since ShojiWM commit `59ea204c` (installed 20/11/2026)
+  the compositor writes to `$SHOJI_LOG_DIR` if set, else `$XDG_STATE_HOME/shoji_wm/logs`, else
+  `~/.local/state/shoji_wm/logs`. Sessions until 20/11/2026 about 12:00 UTC, and any session
+  run by an older build such as the rollback `/usr/lib/shojiwm/shoji_wm.previous`, are in the
+  old `~/shoji_wm/logs`. There, `latest.log` is the last session before the move, not the
+  live one.
 - **Timestamps inside the files are UTC.** Everything else on this system is local (BST in
   summer). This is the single highest-value correction the tool makes.
 - **Level is INFO and above.** No DEBUG, no TRACE. Whole categories of event — focus changes
